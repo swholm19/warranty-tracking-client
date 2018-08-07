@@ -23,7 +23,18 @@ const getWarranties = function () {
   })
 }
 
+const deleteWarranty = function (itemId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/items/' + itemId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createWarranty,
-  getWarranties
+  getWarranties,
+  deleteWarranty
 }

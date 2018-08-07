@@ -13,12 +13,20 @@ const onCreateWarranty = function (event) {
   event.preventDefault()
   const formdata = getFormFields(event.target)
   itemApi.createWarranty(formdata)
-    .then(itemUi.createWarrantySuccess)
     .then(onGetWarranties)
     .catch(itemUi.createWarrantyError)
 }
 
+const onDeleteWarranty = function (event) {
+  event.preventDefault()
+  const itemId = $(event.target).attr('data-id')
+  itemApi.deleteWarranty(itemId)
+    .then(onGetWarranties)
+    .catch(itemUi.deleteWarrantyError)
+}
+
 module.exports = {
   onCreateWarranty,
-  onGetWarranties
+  onGetWarranties,
+  onDeleteWarranty
 }

@@ -19,4 +19,6 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
 
   $('#create-item-form').on('submit', itemEvents.onCreateWarranty)
+
+  $('#warrantyList').on('click', '.deleteButton', itemEvents.onDeleteWarranty)
 })
