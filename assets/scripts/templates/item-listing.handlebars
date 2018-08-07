@@ -1,0 +1,18 @@
+{{#each items as |item|}}
+
+<ul class="list-group">
+  <li class="list-group-item">Item Name: {{item.name}}</li>
+  <li class="list-group-item">Serial Number: {{item.serial_id}}</li>
+  <li class="list-group-item">Price: {{item.price }}</li>
+  <li class="list-group-item">Purchased Date: {{item.purchase_date }}</li>
+  <li class="list-group-item">Expiration Date: {{item.expiration_date }}</li>
+  <li class="list-group-item">
+    <button type="button" data-id="{{item.id}}" class="updateButton btn btn-primary">Update Item</button>
+    <button type="button" data-id="{{item.id}}" class="deleteButton btn btn-primary">Delete Item</button>
+  </li>
+</ul>
+
+<br>
+
+
+{{/each}}
