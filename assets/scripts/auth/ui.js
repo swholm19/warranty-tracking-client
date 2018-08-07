@@ -14,14 +14,11 @@ const signUpError = function (error) {
 const signInSuccess = function (response) {
   $('.login-view').css('display', 'none')
   $('.logged-in-view').css('display', 'block')
-  console.log('Sign-in success!!!')
   store.user = response.user
 }
 
 const signInError = function () {
   console.log('Sign-in error!!!')
-  // $('#signInModalLabel').html('Error. Please Try Again')
-  // $('#signInModalLabel').css('color', 'red')
 }
 
 const changePasswordSuccess = function (response) {
@@ -40,7 +37,6 @@ const signOutFailure = function () {
 }
 
 const resetAuth = function () {
-
 }
 
 module.exports = {

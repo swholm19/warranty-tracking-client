@@ -6,7 +6,6 @@ const itemEvents = require('../item/events')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Sign-up!!!')
   const formdata = getFormFields(event.target)
   authApi.signUp(formdata)
     .then(authUi.signUpSuccess)
@@ -15,7 +14,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Sign-in!!!')
   const data = getFormFields(event.target)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
