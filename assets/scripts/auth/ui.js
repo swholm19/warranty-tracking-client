@@ -12,8 +12,8 @@ const signUpError = function (error) {
 }
 
 const signInSuccess = function (response) {
-  // $('.view1').css('display', 'none')
-  // $('.view2').css('display', 'block')
+  $('.login-view').css('display', 'none')
+  $('.logged-in-view').css('display', 'block')
   console.log('Sign-in success!!!')
   store.user = response.user
 }
@@ -31,6 +31,8 @@ const changePasswordError = function () {
 }
 
 const signOutSuccess = function (response) {
+  $('.login-view').css('display', 'block')
+  $('.logged-in-view').css('display', 'none')
   delete store.user
 }
 

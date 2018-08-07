@@ -6,8 +6,8 @@ const authApi = require('./api.js')
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('Sign-up!!!')
-  const data = getFormFields(event.target)
-  authApi.signUp(data)
+  const formdata = getFormFields(event.target)
+  authApi.signUp(formdata)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpError)
 }
