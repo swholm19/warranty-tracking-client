@@ -1,4 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 footer {
@@ -25,9 +26,15 @@ footer {
   position: relative;
 }
 
-// .hdlbar-btn {
-//   float: right;
-// }
+.updateButton {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
+
+.modal-open {
+  overflow: scroll;
+}
 
 .box {
   border: 1px solid red;

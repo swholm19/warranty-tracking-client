@@ -1,14 +1,14 @@
 {{#each items as |item|}}
 <div class="col-xs-12 col-sm-6 col-md-3 warranty-container">
-  <button type="button" data-id="{{item.id}}" class="updateButton hdlbar-btn">Update Item</button>
-  <button type="button" data-id="{{item.id}}" class="deleteButton hdlbar-btn">X</button>
+  <button type="button" data-id="{{item.id}}" class="updateButton hdlbar-btn btn btn-primary">&#9998;</button>
+  <button type="button" data-id="{{item.id}}" class="deleteButton hdlbar-btn close">&times;</button>
 
 <!-- <div class="warrantyContainer"> -->
   <ul class="list-group">
-    <li class="list-group-item" data-id="{{item.id}}">Item Name: {{item.name}}</li>
+    <li class="list-group-item">Item Name: {{item.name}}</li>
     <li class="list-group-item">Serial Number: {{item.serial_id}}</li>
     <li class="list-group-item">Price: {{item.price }}</li>
-    <li class="list-group-item" data-id="{{item.id}}">Purchased Date: {{item.purchase_date }}</li>
+    <li class="list-group-item">Purchased Date: {{item.purchase_date }}</li>
     <li class="list-group-item">Expiration Date: {{item.expiration_date }}</li>
   </ul>
 </div>
