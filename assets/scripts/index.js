@@ -21,4 +21,6 @@ $(() => {
   $('#create-item-form').on('submit', itemEvents.onCreateWarranty)
 
   $('#warrantyList').on('click', '.deleteButton', itemEvents.onDeleteWarranty)
+  $('#warrantyList').on('click', '.updateButton', itemEvents.onOpenUpdateModal)
+  $('#warrantyList').on('submit', '.update-form', itemEvents.onUpdateWarranty)
 })

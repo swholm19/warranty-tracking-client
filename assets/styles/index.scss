@@ -15,6 +15,20 @@ footer {
   width: 100%;
 }
 
+.warranty-container {
+  border: 1px solid green;
+  height: 250px;
+  margin: 5px;
+  min-height: 250px;
+  width: 30%;
+  overflow: auto;
+  position: relative;
+}
+
+// .hdlbar-btn {
+//   float: right;
+// }
+
 .box {
   border: 1px solid red;
 }

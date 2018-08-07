@@ -25,8 +25,25 @@ const onDeleteWarranty = function (event) {
     .catch(itemUi.deleteWarrantyError)
 }
 
+const onUpdateWarranty = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const itemId = $(event.target).attr('data-id')
+  itemApi.updateWarranty(data, itemId)
+    .then(() => itemUi.updateWarrantySuccess(itemId))
+    .then(onGetWarranties)
+    .catch(itemUi.updateWarrantyError)
+}
+
+const onOpenUpdateModal = function (event) {
+  const itemId = $(event.target).attr('data-id')
+  $(`[data-id="modal${itemId}"]`).modal('show')
+}
+
 module.exports = {
   onCreateWarranty,
   onGetWarranties,
-  onDeleteWarranty
+  onDeleteWarranty,
+  onUpdateWarranty,
+  onOpenUpdateModal
 }

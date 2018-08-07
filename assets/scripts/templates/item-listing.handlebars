@@ -1,18 +1,56 @@
 {{#each items as |item|}}
+<div class="col-xs-12 col-sm-6 col-md-3 warranty-container">
+  <button type="button" data-id="{{item.id}}" class="updateButton hdlbar-btn">Update Item</button>
+  <button type="button" data-id="{{item.id}}" class="deleteButton hdlbar-btn">X</button>
 
-<ul class="list-group">
-  <li class="list-group-item">Item Name: {{item.name}}</li>
-  <li class="list-group-item">Serial Number: {{item.serial_id}}</li>
-  <li class="list-group-item">Price: {{item.price }}</li>
-  <li class="list-group-item">Purchased Date: {{item.purchase_date }}</li>
-  <li class="list-group-item">Expiration Date: {{item.expiration_date }}</li>
-  <li class="list-group-item">
-    <button type="button" data-id="{{item.id}}" class="updateButton btn btn-primary">Update Item</button>
-    <button type="button" data-id="{{item.id}}" class="deleteButton btn btn-primary">Delete Item</button>
-  </li>
-</ul>
+<!-- <div class="warrantyContainer"> -->
+  <ul class="list-group">
+    <li class="list-group-item" data-id="{{item.id}}">Item Name: {{item.name}}</li>
+    <li class="list-group-item">Serial Number: {{item.serial_id}}</li>
+    <li class="list-group-item">Price: {{item.price }}</li>
+    <li class="list-group-item" data-id="{{item.id}}">Purchased Date: {{item.purchase_date }}</li>
+    <li class="list-group-item">Expiration Date: {{item.expiration_date }}</li>
+  </ul>
+</div>
 
-<br>
+<!--  Update Modal Starts Here -->
+<div class="modal fade updateModal" data-id="modal{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title itemUpdateTitle">Update Warranty</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="update-form" data-id="{{item.id}}">
+           <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input name = "item[name]" value="{{item.name}}" type="text"  class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Item Serial ID</label>
+            <input name ="item[serial_id]" value="{{item.serial_id}}" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Price</label>
+            <input  name ="item[price]" value="{{item.price}}" type="number" placeholder="Price">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Purchased Date</label>
+            <input name ="item[purchase_date]" value="{{item.purchase_date}}" type="date" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Expiration Date</label>
+            <input name ="item[expiration_date]" value="{{item.expiration_date}}" type="date" class="form-control">
+          </div>
+            <button type="submit" class="update-submit-button" class="create-submit-button btn btn-primary">Update</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {{/each}}

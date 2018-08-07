@@ -6,7 +6,6 @@ const createWarrantyError = function (error) {
 }
 
 const getWarrantySuccess = function (data) {
-  console.log('warranty data is: ', data)
   const showNewItemsHtml = showItemsTemplate({ items: data.items })
   $('#warrantyList').html(showNewItemsHtml)
 }
@@ -19,9 +18,20 @@ const deleteWarrantyError = function (error) {
   console.log('Delete Warranty error!!!', error)
 }
 
+const updateWarrantySuccess = function (itemId) {
+  $(`[data-id="modal${itemId}"]`).modal('hide')
+  $('.modal-backdrop').remove()
+}
+
+const updateWarrantyError = function (error) {
+  console.log('Update Warranty error!!!', error)
+}
+
 module.exports = {
   createWarrantyError,
   getWarrantySuccess,
   getWarrantyError,
-  deleteWarrantyError
+  deleteWarrantyError,
+  updateWarrantySuccess,
+  updateWarrantyError
 }
