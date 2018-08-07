@@ -12,6 +12,48 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Warranty Tracker</h1>
+      <div class="row article settings1 view2">
+        <div class='col-md-3 box'></div>
+        <div class='col-md-6 box title'><h1>Warranty Tracker</h1></div>
+        <div class='col-md-3 box'></div>
+      </div>
+      <div class="row article settings1 view2">
+        <div class='col-md-2 box'></div>
+        <div class='col-md-4 box title'><h2>Sign-In</h2>
+          <form id='sign-in-form'>
+            <div class="form-group">
+              <label for="signInInputEmail1">Email Address</label>
+              <input name='credentials[email]' type="email" class="form-control" id="signInInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signInInputPassword1">Password</label>
+              <input name='credentials[password]' type="password" class="form-control" id="SignInInputPassword1" placeholder="Password">
+            </div>
+            <button type='submit'>Sign-In</button>
+          </form>
+        </div>
+        <div class='col-md-4 box title'><h2>Sign-Up</h2>
+          <form id='sign-up-form'>
+            <div class="form-group">
+              <label for="signUpInputEmail1">Email Address</label>
+              <input name='credentials[email]' type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword1">Password</label>
+              <input name='credentials[password]' type="password" class="form-control" id="SignUpInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPasswordConfirmation1">Password Confirmation</label>
+              <input name='credentials[password_confirmation]' type="password" class="form-control" id="SignUpInputPasswordConfirmation1" placeholder="Password Confirmation">
+            </div>
+            <button type='submit'>Sign-Up</button>
+          </form>
+        </div>
+        <div class='col-md-2 box'></div>
+      </div>
+
+      <footer>
+        <p>Created by HolmSolutions</p>
+      </footer>
     </body>
 </html>
