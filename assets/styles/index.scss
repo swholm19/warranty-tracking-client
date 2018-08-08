@@ -18,9 +18,9 @@ footer {
 
 .warranty-container {
   border: 1px solid green;
-  height: 250px;
+  height: 270px;
   margin: 5px;
-  min-height: 250px;
+  min-height: 270px;
   width: 30%;
   overflow: auto;
   position: relative;
@@ -55,4 +55,8 @@ footer {
 .error-view {
   color: red;
   display: none;
+}
+
+#create_barcode_scanner {
+  float: right;
 }
