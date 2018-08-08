@@ -20,9 +20,15 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePW)
   $('#sign-out').on('click', authEvents.onSignOut)
 
-  $('#createWarranty').on('click', () => $('#create-item-form')[0].reset())
+  // Create Warranty Modal Event Handler
+  $('#createWarranty').on('click', () => {
+    $('#create-item-form')[0].reset()
+    $('#createModalLabel').html('Create Item Warranty')
+    $('#createModalLabel').css('color', 'black')
+  })
   $('#create-item-form').on('submit', itemEvents.onCreateWarranty)
 
+  // Delete and Update Handlebar Buttons Event Handlers
   $('#warrantyList').on('click', '.deleteButton', itemEvents.onDeleteWarranty)
   $('#warrantyList').on('click', '.updateButton', itemEvents.onOpenUpdateModal)
   $('#warrantyList').on('submit', '.update-form', itemEvents.onUpdateWarranty)

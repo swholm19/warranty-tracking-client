@@ -13,6 +13,7 @@ const onCreateWarranty = function (event) {
   event.preventDefault()
   const formdata = getFormFields(event.target)
   itemApi.createWarranty(formdata)
+    .then(itemUi.createWarrantySuccess)
     .then(onGetWarranties)
     .catch(itemUi.createWarrantyError)
 }
@@ -36,6 +37,8 @@ const onUpdateWarranty = function (event) {
 }
 
 const onOpenUpdateModal = function (event) {
+  $('.itemUpdateTitle').html('Update Warranty')
+  $('.itemUpdateTitle').css('color', 'black')
   const itemId = $(event.target).attr('data-id')
   $(`[data-id="modal${itemId}"]`).modal('show')
 }
