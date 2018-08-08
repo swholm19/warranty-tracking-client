@@ -8,6 +8,7 @@ const signUpSuccess = function (signUpResponse) {
 const signUpError = function (error) {
   $('#error-message').html('ERROR SIGNING-UP PLEASE TRY AGAIN', error)
   $('.error-view').css('display', 'block')
+  $('#sign-up-form')[0].reset()
 }
 
 const signInSuccess = function (response) {
@@ -20,6 +21,7 @@ const signInSuccess = function (response) {
 const signInError = function (error) {
   $('#error-message').html('ERROR SIGNING-IN PLEASE TRY AGAIN', error)
   $('.error-view').css('display', 'block')
+  $('#sign-in-form')[0].reset()
 }
 
 const changePasswordSuccess = function (response) {
@@ -30,6 +32,7 @@ const changePasswordSuccess = function (response) {
 const changePasswordError = function () {
   $('#changePasswordModalLabel').html('ERROR CHANGING PASSWORD PLEASE TRY AGAIN')
   $('#changePasswordModalLabel').css('color', 'red')
+  $('#change-password-form')[0].reset()
 }
 
 const signOutSuccess = function (response) {
