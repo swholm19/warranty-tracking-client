@@ -8,6 +8,7 @@ const createWarrantySuccess = function () {
 const createWarrantyError = function () {
   $('#createModalLabel').html('ERROR CREATING WARRANTY PLEASE TRY AGAIN')
   $('#createModalLabel').css('color', 'red')
+  $('#create-item-form')[0].reset()
 }
 
 const getWarrantySuccess = function (data) {
