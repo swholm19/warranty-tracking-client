@@ -16,9 +16,15 @@
         <div class='col-md-3 box'></div>
         <div class='col-md-6 box title'><h1>Warranty Tracker</h1></div>
         <div class='col-md-3 box'>
-          <button type="button" class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+          <button type="button" id='changePwd' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
           <button type="button" id='sign-out' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#signOutModal">Sign Out</button>
         </div>
+      </div>
+
+      <div class="row article error-view">
+        <div class='col-md-3 box'></div>
+        <div class='col-md-6 box title'><h2 id='error-message'></h2></div>
+        <div class='col-md-3 box'></div>
       </div>
 
       <div class="row article login-view">
@@ -56,10 +62,10 @@
         <div class='col-md-2 box'></div>
       </div>
 
+
       <div class="row article logged-in-view">
-        <!-- <div class='col-md-1 box'></div> -->
         <div class='col-md-1 box'>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createWarrantyItemModal">+ Warranty</button>
+          <button type="button" id='createWarranty' class="btn btn-primary" data-toggle="modal" data-target="#createWarrantyItemModal">+ Warranty</button>
         </div>
         <div  id='warrantyList' class='col-md-10 box'></div>
         <div class='col-md-1 box'></div>

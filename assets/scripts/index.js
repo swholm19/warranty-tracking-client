@@ -7,6 +7,7 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
+const authUi = require('./auth/ui')
 const itemEvents = require('./item/events')
 
 $(() => {
@@ -15,9 +16,11 @@ $(() => {
   // Authentication Event Handler
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#changePwd').on('click', authUi.resetAuth)
   $('#change-password-form').on('submit', authEvents.onChangePW)
   $('#sign-out').on('click', authEvents.onSignOut)
 
+  $('#createWarranty').on('click', () => $('#create-item-form')[0].reset())
   $('#create-item-form').on('submit', itemEvents.onCreateWarranty)
 
   $('#warrantyList').on('click', '.deleteButton', itemEvents.onDeleteWarranty)

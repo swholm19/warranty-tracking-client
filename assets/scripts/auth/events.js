@@ -9,6 +9,9 @@ const onSignUp = function (event) {
   const formdata = getFormFields(event.target)
   authApi.signUp(formdata)
     .then(authUi.signUpSuccess)
+    .then(() => authApi.signIn(formdata))
+    .then(authUi.signInSuccess)
+    .then(itemEvents.onGetWarranties)
     .catch(authUi.signUpError)
 }
 
