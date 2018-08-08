@@ -15,9 +15,7 @@ const getWarrantySuccess = function (data) {
   const showNewItemsHtml = showItemsTemplate({ items: data.items })
   $('#warrantyList').html(showNewItemsHtml)
   data.items.forEach((item) => {
-    console.log('item is: ', item)
     if (item.warning) {
-      console.log('item is warining: ', item.warning)
       $(`[data-id="box_${item.id}"`).css('border-color', 'red')
     }
   })
