@@ -1,74 +1,86 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+<h1>Warranty Management System</h1>
 
-# browser-template
+<h2>UI Screenshot</h2>
+![](https://imgur.com/gallery/AaEGfVQ)
+<h1>1</h1>
+![](./assets/styles/screenShot.png)
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+<h2>Links:</h2>
+<ul>
+  <li>Client Repository: https://github.com/swholm19/warranty-tracking-client</li>
+  <li>Client Deployed: http://scottwholm.com/warranty-tracking-client/</li>
+  <li>API Repository: https://github.com/swholm19/warranty-tracking-api</li>
+  <li>API Deployed: https://warranty-tracking-api.herokuapp.com</li>
+</ul>
 
-## Installation
+<h2>How it Works</h2>
+<p>After user logins in, all warranties they have already loaded are automatically
+populated in UI. On the left hand side there is a create new warranty button which
+will open a new UI, where you can fill in information. If you click the scan
+barcode button it will open another UI which you can scan the barcode and it will
+automatically populate the serial ID number field. This functionality only works
+in localhost because when it is deployed you need to have a secure URL (HTTPS)
+which the site currently does not have. In each warranty that is displayed
+in the UI you can edit or delete, the warranty. Only warranties that the user who
+is logged in will appear on the screen. If the warranty is going to expire within
+a month the border around the warranty will turn red to alert user it is coming up.
+Also all warranties will be displayed in chronological order from most recent
+to expire to furthest out expiration date. Full authentication is also provided and
+works like the standard browser authentication.</p>
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
+<h2>Front-end Technologies Used:</h2>
+<ul>
+  <li>jQuery</li>
+  <li>JavaScript</li>
+  <li>Command Line</li>
+  <li>HTML</li>
+  <li>Handlebars</li>
+  <li>SCSS</li>
+  <li>AJAX</li>
+  <li>Bootstrap</li>
+</ul>
 
-## Structure
+<h2>Future Iteration/ fixed problems</h2>
+<ul>
+  <li>Fix: Make URL Secure HTTPS, so Barcode Scanner can use video feed.</li>
+  <li>Future: User can upload image of item which will be saved in AWS S3</li>
+  <li>Future: Mobile/smaller screen size compabtabilty</li>
+</ul>
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+<h2>User stories</h2>
+<ul>
+  <li>As a User, I want to sign up, to manage my warranties.</li>
+  <li>As a User, I want to sign in, to edit my warranties.</li>
+  <li>As a User, I want to change password, for security purposes.</li>
+  <li>As a User, I want to sign out, because I am finished editing my warranties.</li>
+  <li>As a User, I want to be able to view all of my warranties.</li>
+  <li>As a User, I want to be able to view a specific warranty.</li>
+  <li>As a User, I want to be able to remove warranties.</li>
+  <li>As a User, I want to add new warranties to my inventory.</li>
+</ul>
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+<h2>Wireframe & ERD</h2>
+https://imgur.com/gallery/78FDICv
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+<h2>Development Process:</h2>
+<p>Once idea for project was finalized user stories, wireframes, and ERD were create
+to start planning with. Iterated through designs until an acheiviable MVP in the
+timeframe was identified. From there Client and API files repositories and files
+were created to work inside of, and once able to deploy and prove connections
+were working moved on. First coding was for the backend API, where Rails was
+used to scaffold out the API then modifications were made to customize it. Finally
+Curl-Scirpts and Postman were used to test the API. Once API was mature moved on to
+client, where a rough wireframe was created in HTML to show divs and button and
+provided elements to interact with. Next the authentication and view were established.
+After that curl-scripts were created to test the API routes and then full CRUD
+to the newly created API were developed. Once AJAX calls were working, created
+handlebars and made UI changes based on the API returned information. After that
+implemented NPM Package for bar code scanner, which allows user to scan a
+bar code and the system will automatically populate it. After basic functionality was
+implemented and tested, moved on to styling the UI and making it look presentable.
+After that bug fixes and minor tweaks to improved the user experience were
+added.</p>
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+<h2>Set-up and Installation Instructions</h2>
+<p>To set up front-end you will need to fork and clone repo. Do an NPM install.
+Will need to create a .env file with SECRET_KEY_DEVELOPMENT and TEST set.</p>
