@@ -3,7 +3,7 @@
 <h2>UI Screenshot</h2>
 [![Screenshot](https://imgur.com/gallery/AaEGfVQ)]
 <h1>1</h1>
-[![](./assets/styles/screenShot.png)]
+![Screenshot](./assets/styles/screenShot.png?raw=true "Title")
 
 <h2>Links:</h2>
 <ul>
