@@ -1,9 +1,9 @@
 <h1>Warranty Management System</h1>
 
 <h2>UI Screenshot</h2>
-![](https://imgur.com/gallery/AaEGfVQ)
+[![Screenshot](https://imgur.com/gallery/AaEGfVQ)]
 <h1>1</h1>
-![](./assets/styles/screenShot.png)
+[![](./assets/styles/screenShot.png)]
 
 <h2>Links:</h2>
 <ul>
