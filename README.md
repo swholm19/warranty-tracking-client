@@ -23,7 +23,7 @@ which the site currently does not have. In each warranty that is displayed
 in the UI you can edit or delete, the warranty. Only warranties that the user who
 is logged in will appear on the screen. If the warranty is going to expire within
 a month the border around the warranty will turn red to alert user it is coming up.
-Also all warranties will be displayed in chronological order from most recent
+Also all warranties will be displayed in chronological order from soonest
 to expire to furthest out expiration date. Full authentication is also provided and
 works like the standard browser authentication.</p>
 
@@ -82,4 +82,4 @@ added.</p>
 
 <h2>Set-up and Installation Instructions</h2>
 <p>To set up front-end you will need to fork and clone repo. Do an NPM install.
-Will need to create a .env file with SECRET_KEY_DEVELOPMENT and TEST set.</p>
+Will need to create a .env file with SECRET_KEY_DEVELOPMENT and TEST keys.</p>
