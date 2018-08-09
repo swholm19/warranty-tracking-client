@@ -2,6 +2,8 @@
 import Quagga from 'quagga'
 
 const startScan = function () {
+  $('#scanModalLabel').html('THIS FEATURE NOT SUPPORTED IN HTTP')
+  $('#scanModalLabel').css('color', 'red')
   Quagga.init({
     inputStream: {
       name: 'Live',
@@ -71,6 +73,8 @@ const stopScan = function () {
   Quagga.offProcessed()
   Quagga.offDetected()
   $('#scanner-container').html('')
+  $('#scanModalLabel').html('Scan Item BarCode')
+  $('#scanModalLabel').css('color', 'black')
 }
 
 module.exports = {
