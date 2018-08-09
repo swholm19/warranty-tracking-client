@@ -2,13 +2,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+canvas.drawing, canvas.drawingBuffer {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
 footer {
   background-color: grey;
   bottom: 0;
   color: white;
   height: 20px;
   left: 0;
-  margin-top: 10px;
   opacity: 0.9;
   padding-top: 1px;
   position: fixed;
@@ -16,36 +26,49 @@ footer {
   width: 100%;
 }
 
+.btn {
+  background-color: grey;
+  border: 1px solid black;
+  color: black;
+  opacity: 0.8;
+}
+
 .warranty-container {
-  border: 1px solid green;
+  border: 2px solid black;
   height: 270px;
   margin: 5px;
   min-height: 270px;
-  width: 30%;
   overflow: auto;
   position: relative;
+  width: 30%;
 }
 
 .updateButton {
-  background-color: white;
-  border-color: white;
+  background-color: #f2f2f2;
+  border-color: black;
   color: black;
+  margin: 3px;
 }
 
 .modal-open {
   overflow: scroll;
 }
 
-.box {
-  border: 1px solid red;
-}
-
 .title {
   text-align: center;
 }
 
+.sign-up-box {
+  border-left: 2px solid black;
+}
+
+.menu_title_box {
+  border-bottom: 2px solid black;
+}
+
 .login-view {
   display: block;
+  margin-top: 7%;
 }
 
 .logged-in-view {
@@ -57,6 +80,11 @@ footer {
   display: none;
 }
 
-#create_barcode_scanner {
+#createWarranty {
+  margin-left: 15px;
+}
+
+#scanWarranty {
   float: right;
+  margin-bottom: 3px;
 }

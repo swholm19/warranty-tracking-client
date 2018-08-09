@@ -11,25 +11,17 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <!-- BarCode Scanner Stuff -->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-          /* In order to place the tracking correctly */
-          canvas.drawing, canvas.drawingBuffer {
-              position: absolute;
-              left: 0;
-              top: 0;
-          }
-      </style>
     </head>
     <body>
       <div class="row article">
         <div class='col-md-3 box'></div>
-        <div class='col-md-6 box title'><h1>Warranty Tracker</h1></div>
-        <div class='col-md-3 box'>
+        <div class='col-md-6 box title menu_title_box'><h1>Warranty Tracker</h1></div>
+        <div class='col-md-1 box'></div>
+        <div class='col-md-1 box'>
           <button type="button" id='changePwd' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
-          <button type="button" id='sign-out' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#signOutModal">Sign Out</button>
+        <button type="button" id='sign-out' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#signOutModal">Sign Out</button>
+        </div>
+        <div class='col-md-1 box'>
         </div>
       </div>
 
@@ -41,7 +33,7 @@
 
       <div class="row article login-view">
         <div class='col-md-2 box'></div>
-        <div class='col-md-4 box title'><h2>Sign-In</h2>
+        <div class='col-md-4 box'><h2 class='title'>Sign-In</h2>
           <form id='sign-in-form'>
             <div class="form-group">
               <label for="signInInputEmail1">Email Address</label>
@@ -51,10 +43,10 @@
               <label for="signInInputPassword1">Password</label>
               <input name='credentials[password]' type="password" class="form-control" id="SignInInputPassword1" placeholder="Password">
             </div>
-            <button type='submit'>Sign-In</button>
+            <button type='submit' class="btn btn-primary">Sign-In</button>
           </form>
         </div>
-        <div class='col-md-4 box title'><h2>Sign-Up</h2>
+        <div class='col-md-4 box sign-up-box'><h2 class='title'>Sign-Up</h2>
           <form id='sign-up-form'>
             <div class="form-group">
               <label for="signUpInputEmail1">Email Address</label>
@@ -68,7 +60,7 @@
               <label for="signUpInputPasswordConfirmation1">Password Confirmation</label>
               <input name='credentials[password_confirmation]' type="password" class="form-control" id="SignUpInputPasswordConfirmation1" placeholder="Password Confirmation">
             </div>
-            <button type='submit'>Sign-Up</button>
+            <button type='submit' class="btn btn-primary">Sign-Up</button>
           </form>
         </div>
         <div class='col-md-2 box'></div>
@@ -135,7 +127,7 @@
                 </div>
                 <div class="form-group">
                   <label for="formGroupExampleInput2">Price</label>
-                  <input  name ="item[price]" class="form-control" type="number" placeholder="Price">
+                  <input  name ="item[price]" class="form-control" type="number" min="0.01" step="0.01" max="9999999999" placeholder="Price">
                 </div>
                 <div class="form-group">
                   <label for="formGroupExampleInput">Purchased Date</label>
@@ -166,7 +158,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <input type="button" id="startbtn" value="Start the scanner" />
+              <input type="button" class="btn btn-primary" id="startbtn" value="Start the scanner" />
               <div id="scanner-container"></div>
             </div>
             <div class="modal-footer">
@@ -175,7 +167,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- Footer Starts Here -->
       <footer>
