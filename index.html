@@ -10,6 +10,18 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- BarCode Scanner Stuff -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          /* In order to place the tracking correctly */
+          canvas.drawing, canvas.drawingBuffer {
+              position: absolute;
+              left: 0;
+              top: 0;
+          }
+      </style>
     </head>
     <body>
       <div class="row article">
@@ -117,9 +129,8 @@
                   <input name = "item[name]" placeholder="Item Name" type="text"  class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput">Item Serial ID
-                    <!-- <button id="create_barcode_scanner"><span class="glyphicon">&#xe046;</span></button> -->
-                  </label>
+                  <label for="formGroupExampleInput">Item Serial ID</label>
+                  <button type="button" id='scanWarranty' class="btn btn-primary stopbtn" data-toggle="modal" data-target="#scanWarrantyItemModal">Scan BarCode</button>
                   <input name ="item[serial_id]" placeholder="Serial ID" type="text" class="form-control">
                 </div>
                 <div class="form-group">
@@ -143,6 +154,29 @@
           </div>
         </div>
       </div>
+
+      <!-- Scan Modal -->
+      <div class="modal fade" id="scanWarrantyItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="scanModalLabel">Scan Item Barcode</h5>
+              <button type="button" class="close stopbtn" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="button" id="startbtn" value="Start the scanner" />
+              <div id="scanner-container"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary stopbtn" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <!-- Footer Starts Here -->
       <footer>
         <p>Created by HolmSolutions</p>

@@ -9,6 +9,7 @@
 const authEvents = require('./auth/events')
 const authUi = require('./auth/ui')
 const itemEvents = require('./item/events')
+const scannerEvents = require('./scanner/events')
 
 $(() => {
   // your JS code goes here
@@ -32,4 +33,8 @@ $(() => {
   $('#warrantyList').on('click', '.deleteButton', itemEvents.onDeleteWarranty)
   $('#warrantyList').on('click', '.updateButton', itemEvents.onOpenUpdateModal)
   $('#warrantyList').on('submit', '.update-form', itemEvents.onUpdateWarranty)
+
+  // Barcode Scanner
+  $('#startbtn').on('click', scannerEvents.startScan)
+  $('.stopbtn').on('click', scannerEvents.stopScan)
 })
