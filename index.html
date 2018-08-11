@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Warranty Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+    </head>
+    <body>
+      <div class="row article">
+        <div class='col-md-3 box'></div>
+        <div class='col-md-6 box title menu_title_box'><h1>Warranty Tracker</h1></div>
+        <div class='col-md-1 box'></div>
+        <div class='col-md-1 box'>
+          <button type="button" id='changePwd' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+          <button type="button" id='sign-out' class="btn btn-primary logged-in-view" data-toggle="modal" data-target="#signOutModal">Sign Out</button>
+        </div>
+        <div class='col-md-1 box'>
+        </div>
+      </div>
+
+      <div class="row article error-view">
+        <div class='col-md-3 box'></div>
+        <div class='col-md-6 box title'><h2 id='error-message'></h2></div>
+        <div class='col-md-3 box'></div>
+      </div>
+
+      <div class="row article login-view">
+        <div class='col-md-2 box'></div>
+        <div class='col-md-4 box'><h2 class='title'>Sign-In</h2>
+          <form id='sign-in-form'>
+            <div class="form-group">
+              <label for="signInInputEmail1">Email Address</label>
+              <input name='credentials[email]' type="email" class="form-control" id="signInInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signInInputPassword1">Password</label>
+              <input name='credentials[password]' type="password" class="form-control" id="SignInInputPassword1" placeholder="Password">
+            </div>
+            <button type='submit' class="btn btn-primary">Sign-In</button>
+          </form>
+        </div>
+        <div class='col-md-4 box sign-up-box'><h2 class='title'>Sign-Up</h2>
+          <form id='sign-up-form'>
+            <div class="form-group">
+              <label for="signUpInputEmail1">Email Address</label>
+              <input name='credentials[email]' type="email" class="form-control" id="signUpInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPassword1">Password</label>
+              <input name='credentials[password]' type="password" class="form-control" id="SignUpInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="signUpInputPasswordConfirmation1">Password Confirmation</label>
+              <input name='credentials[password_confirmation]' type="password" class="form-control" id="SignUpInputPasswordConfirmation1" placeholder="Password Confirmation">
+            </div>
+            <button type='submit' class="btn btn-primary">Sign-Up</button>
+          </form>
+        </div>
+        <div class='col-md-2 box'></div>
+      </div>
+
+
+      <div class="row article logged-in-view">
+        <div class='col-md-1 box'>
+          <button type="button" id='createWarranty' class="btn btn-primary" data-toggle="modal" data-target="#createWarrantyItemModal">+ Warranty</button>
+        </div>
+        <div  id='warrantyList' class='col-md-10 box'></div>
+        <div class='col-md-1 box'></div>
+      </div>
+
+      <!-- Change Password Modal Starts Here -->
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id='change-password-form'>
+                <div class="form-group">
+                  <label for="changePasswordInputPassword1">Old Password</label>
+                  <input name='passwords[old]' type="password" class="form-control" id="changePasswordInputPasswordOld" placeholder="Old Password">
+                </div>
+                <div class="form-group">
+                  <label for="signUpInputPasswordConfirmation1">New Password</label>
+                  <input name='passwords[new]' type="password" class="form-control" id="changePasswordInputNew" placeholder="New Password">
+                </div>
+                <button type='submit'>Change Password</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Create Modal Starts Here -->
+      <div class="modal fade" id="createWarrantyItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="createModalLabel">Create Item Warranty</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="create-item-form" class="create-form">
+                 <div class="form-group">
+                  <label for="formGroupExampleInput">Name</label>
+                  <input name = "item[name]" placeholder="Item Name" type="text"  class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Item Serial ID</label>
+                  <button type="button" id='scanWarranty' class="btn btn-primary stopbtn" data-toggle="modal" data-target="#scanWarrantyItemModal">Scan BarCode</button>
+                  <input name ="item[serial_id]" placeholder="Serial ID" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Price</label>
+                  <input  name ="item[price]" class="form-control" type="number" min="0.01" step="0.01" max="9999999999" placeholder="Price">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Purchased Date</label>
+                  <input name ="item[purchase_date]" placeholder="Date" type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Expiration Date</label>
+                  <input name ="item[expiration_date]" placeholder="Date" type="date" class="form-control">
+                </div>
+                <button type="submit" id="create-post-submit-button" class="create-submit-button btn btn-primary">Create</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scan Modal -->
+      <div class="modal fade" id="scanWarrantyItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="scanModalLabel">Scan Item Barcode</h5>
+              <button type="button" class="close stopbtn" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="button" class="btn btn-primary" id="startbtn" value="Start the scanner" />
+              <div id="scanner-container"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary stopbtn" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Starts Here -->
+      <footer>
+        <p>Created by HolmSolutions</p>
+      </footer>
+    </body>
+</html>
